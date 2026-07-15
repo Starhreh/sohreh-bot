@@ -36,7 +36,7 @@ async def on_message(message):
 
     if "zandik" in message.content.lower():
         zdm = {
-         "1": "Gay man with a an ability to strangle people very nicely and quite fast.",
+         "1": "Gay man with an ability to strangle people very nicely and quite fast.",
          "2": "He's young — handsome, too. But he's too rigid.",
          "3": 'He seems interested in those weird machines called "Ruin Guards."'
         }
@@ -92,6 +92,7 @@ async def on_message(message):
             "2": "His experiments seem too unethical for me.",
             "3": "He got expelled from the akademiya for a reason."
         }
+        rng = random.randint(1, 3)
         await message.channel.send(dmm[str(rng)])
     
     # to do: add more
