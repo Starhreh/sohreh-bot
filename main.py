@@ -23,7 +23,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
-    if "sohreh" in message.content.lower():
+    if "sohreh" in message.content.lower() and not "i hate you" in message.content.lower() and not "i love you" in message.content.lower() and not "marry me" in message.content.lower() and not "dead" in message.content.lower():
         await message.channel.send("Yes?")
     if "sunday" in message.content.lower():
         sdm = {
