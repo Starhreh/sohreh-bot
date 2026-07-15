@@ -7,6 +7,7 @@ import random
 
 intents = discord.Intents.default()
 intents.message_content = True
+intents.presences = True
 client = discord.Client(intents=intents)
 
 bot = commands.Bot(command_prefix='-', intents=intents)
@@ -17,7 +18,10 @@ token = os.environ.get('BOTTOKEN')
 async def on_ready():
     print(f'logged in successfully as sohreh hehe :)')
 
-
+@bot.event
+async def status():
+    await bot.change_presence(activity=discord.Game(name="doing my homework 🏳️‍🌈"))
+    
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
@@ -94,10 +98,6 @@ async def on_message(message):
         await message.channel.send(dmm[str(rng)])
     
     # to do: add more
-
-@bot.event
-async def presence():
-    await bot.change_presence(activity=discord.Game(name="doing my homework :)"))
     
 webserver.keep_alive()
 bot.run(token)
