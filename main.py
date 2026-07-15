@@ -17,9 +17,6 @@ token = os.environ.get('BOTTOKEN')
 @bot.event
 async def on_ready():
     print(f'logged in successfully as sohreh hehe :)')
-
-@bot.event
-async def status():
     await bot.change_presence(activity=discord.Game(name="doing my homework 🏳️‍🌈"))
     
 @bot.event
